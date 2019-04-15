@@ -5,7 +5,7 @@ import axios from 'axios';
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
-export const login = creds => dipatch => {
+export const login = creds => dispatch => {
   dispatch({ LOGIN_START })
   return axios
     .post('', creds)
@@ -29,6 +29,6 @@ export const signup = creds => dispatch => {
       dispatch({ type: SIGNUP_SUCCESS, payload: res.data.payload });
     })
     .catch(err => {
-      dispatch({ type: SIGNUP_FAILURE, payload: err })
+      dispatch({ type: SIGNUP_FAIL, payload: err })
     });
 };

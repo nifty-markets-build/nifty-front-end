@@ -1,9 +1,66 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const LogIn = ({props}) => (
-  <div>
-    <h2>Log In</h2>
-  </div>
-);
+import { login } from '../../../actions';
 
-export default LogIn;
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      credentials: {
+        username: '',
+        password: ''
+      }
+    };
+  }
+
+  login = e => {
+    e.preventDefault();
+    this.props.login(this.state.credentials)
+      .then(() => {
+        this.props.history.push('/')
+      })
+  }
+
+  handleLogin = e => {
+    this.setState({
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value,
+      }
+    });
+  }
+
+  render() {
+    return(
+      <div className='cont'>
+        <div className='box'>
+          <h2>Please Log In</h2>
+          <hr className='hr' />
+          <form onSubmit={this.login}>
+            <h3>Username</h3>
+            <input
+              type='text'
+              name='username'
+              value={this.state.credentials.username}
+              onChange={this.handleLogin}
+            />
+            <h3>Password</h3>
+            <input
+              type='password'
+              name='password'
+              value={this.state.credentials.password}
+              onChange={this.handleLogin}
+            />
+            <button>Log in!</button>
+          </form>
+
+          <p>Not a member? Register <a href='/signup'>here</a></p>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default connect(
+  null, { login })(Login);
