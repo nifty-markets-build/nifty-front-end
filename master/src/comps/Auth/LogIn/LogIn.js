@@ -33,8 +33,8 @@ class Login extends Component {
 
   render() {
     return(
-      <div className='cont'>
-        <div className='box'>
+      <div className=''>
+        <div className='auth-box'>
           <h2>Please Log In</h2>
           <hr className='hr' />
           <form onSubmit={this.login}>
@@ -62,5 +62,6 @@ class Login extends Component {
   }
 }
 
-export default connect(
-  null, { login })(Login);
+export default connect(null,
+  { login }
+)(Login);
