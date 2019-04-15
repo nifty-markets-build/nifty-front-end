@@ -33,8 +33,8 @@ class SignUp extends Component {
 
   render() {
     return(
-      <div className='cont'>
-        <div className='box'>
+      <div className='auth-cont'>
+        <div className='auth-box'>
           <h2>Register Now!</h2>
           <hr className='hr' />
           <form onSubmit={this.login}>
@@ -52,6 +52,7 @@ class SignUp extends Component {
               value={this.state.credentials.password}
               onChange={this.handleLogin}
             />
+            <br />
             <button>Register!</button>
             </form>
 

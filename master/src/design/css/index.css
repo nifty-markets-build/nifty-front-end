@@ -169,13 +169,6 @@ img {
   justify-content: space-between;
   background-color: black;
 }
-.navbar .logo {
-  display: flex;
-  font-size: 1rem;
-  padding: 0.3rem 1rem 0.5rem 1rem;
-  color: white;
-  text-shadow: 1.5px 1.5px lightgrey;
-}
 .navbar .menu {
   display: flex;
   color: white;
@@ -211,6 +204,32 @@ img {
   background-color: white;
   transition: 1s;
 }
+.navbar .logo {
+  display: flex;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 1.5px 1.5px lightgrey;
+}
+.navbar .logo img {
+  height: 5rem;
+}
+.navbar .user {
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navbar .user .far {
+  display: flex;
+  font-size: 3rem;
+  margin: 0.3rem;
+  padding: 0.5rem 2rem;
+}
+.navbar .user .far:hover {
+  color: lightgrey;
+  cursor: pointer;
+  transition: 1s;
+}
 .auth-cont {
   display: flex;
   width: 100%;
@@ -220,10 +239,30 @@ img {
 .auth-cont .auth-box {
   border: 1px solid grey;
   display: flex;
-  width: 60%;
+  width: 50%;
   flex-direction: column;
   margin: 7rem auto;
   background-color: #fffff4;
   border-radius: 15px;
   box-shadow: 0 0 10px #000000;
+  padding: 1rem;
+}
+.auth-cont .auth-box h2 {
+  display: flex;
+  margin: 0.5rem auto;
+}
+.auth-cont .auth-box form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 1rem auto;
+}
+.auth-cont .auth-box p {
+  display: flex;
+  margin: 1rem auto;
+}
+.auth-cont .auth-box button {
+  font-size: 2rem;
+  width: 75%;
+  margin: 0 auto;
 }

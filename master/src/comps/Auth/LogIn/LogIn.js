@@ -52,6 +52,7 @@ class Login extends Component {
               value={this.state.credentials.password}
               onChange={this.handleLogin}
             />
+            <br />
             <button>Log in!</button>
           </form>
 

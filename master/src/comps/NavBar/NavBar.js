@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import NiftyMarket from '../../ast/Logo.png';
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -37,10 +39,6 @@ class NavBar extends React.Component {
     const {isMenuOpen, menuItems} = this.state
     return (
       <div className='navbar'>
-        <div className='logo'>
-          <h1>Nifty Market</h1>
-        </div>
-
         <div className='menu'>
           {isMenuOpen && <div id='item-drop' className='menu-items'>
             {menuItems.map((item) => (
@@ -52,6 +50,15 @@ class NavBar extends React.Component {
             ? <i onClick={ this.toggleMenu } className="fas fa-minus-square" />
             : <i onClick={ this.toggleMenu } className="fas fa-bars" />
           }
+        </div>
+
+        <div className='logo'>
+
+          <img src={ NiftyMarket } alt='Nifty Market logo'/>
+        </div>
+
+        <div className="user">
+          <i class="far fa-user"></i>
         </div>
       </div>
     );
