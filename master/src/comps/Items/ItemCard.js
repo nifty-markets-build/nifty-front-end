@@ -5,7 +5,7 @@ class ItemCard extends React.Component {
     return (
       <div>
         <div>
-          <img src={this.props.item.img}
+          <img src={this.props.item.img} alt=''/>
         </div>
 
         <div>

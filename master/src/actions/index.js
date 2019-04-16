@@ -6,9 +6,9 @@ export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const login = creds => dispatch => {
-  dispatch({ LOGIN_START })
+  dispatch({ type: LOGIN_START })
   return axios
-    .post('', creds)
+    .post('https://niftymarket.herokuapp.com/users/login', creds)
     .then(res => {
       localStorage.setItem('token', res.data.payload)
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload });
@@ -24,7 +24,7 @@ export const SIGNUP_FAIL = 'SIGNUP_FAIL';
 export const signup = creds => dispatch => {
   dispatch({ type: SIGNUP_START })
   return axios
-    .post('', creds)
+    .post('https://niftymarket.herokuapp.com/users/register', creds)
     .then(res => {
       dispatch({ type: SIGNUP_SUCCESS, payload: res.data.payload });
     })
