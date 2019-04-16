@@ -1,3 +1,7 @@
+@prim- 1: darken(black, 10&);
+@seco- 1: darken(blue, 10&);
+@prim- 2: darken(black, 20&);
+@seco- 2: darken(blue, 20&);
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -265,4 +269,23 @@ img {
   font-size: 2rem;
   width: 75%;
   margin: 0 auto;
+  color: ;
+  background-color: ;
+}
+.home header {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.home header .logo {
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+}
+.home body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

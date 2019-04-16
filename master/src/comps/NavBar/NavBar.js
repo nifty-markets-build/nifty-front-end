@@ -8,12 +8,25 @@ class NavBar extends React.Component {
     super(props);
     this.state = {
       isMenuOpen: false,
+      isUserOpen: false,
       menuItems: [
         {
           id: 1,
           text: 'Home',
           link: '/',
         },
+        {
+          id: 2,
+          text: 'Sign Up',
+          link: '/signup',
+        },
+        {
+          id: 3,
+          text: 'Log In',
+          link: '/login',
+        },
+      ],
+      userItems: [
         {
           id: 2,
           text: 'Sign Up',
