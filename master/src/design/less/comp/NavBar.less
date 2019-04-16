@@ -1,0 +1,78 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: black;
+
+  .menu {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .fas {
+      display: flex;
+      font-size: 3rem;
+      margin: 0.3rem;
+      padding: 0.5rem 2rem;
+
+      &:hover {
+        color: lightgrey;
+        cursor: pointer;
+        transition: 1s
+      }
+    }
+
+    .menu-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .menu-link {
+        display: flex;
+        margin: 1rem;
+        padding: 0 1rem;
+        font-size: 2.5rem;
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          color: black;
+          background-color: white;
+          transition: 1s;
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1.5px 1.5px lightgrey;
+
+    img {
+      height: 5rem;
+    }
+  }
+
+  .user {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .far {
+      display: flex;
+      font-size: 3rem;
+      margin: 0.3rem;
+      padding: 0.5rem 2rem;
+
+      &:hover {
+        color: lightgrey;
+        cursor: pointer;
+        transition: 1s
+      }
+    }
+  }
+}
