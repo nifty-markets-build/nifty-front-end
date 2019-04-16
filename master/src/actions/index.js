@@ -56,7 +56,7 @@ export const GET_ITEMS_FAIL = 'GET_ITEMS_FAIL';
 export const getItems = () => dispatch => {
   dispatch({ type: GET_ITEMS_START });
   axios
-    .get('', {headers: {authorization: localStorage.getItem('token')}})
+    .get('https://niftymarket.herokuapp.com/items')
     .then(res => {
       dispatch({ type: GET_ITEMS_SUCCESS, payload: res.data });
     })

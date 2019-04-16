@@ -2,6 +2,17 @@
 @seco- 1: darken(blue, 10&);
 @prim- 2: darken(black, 20&);
 @seco- 2: darken(blue, 20&);
+.header-img header {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.header-img header .logo {
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+}
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -174,9 +185,10 @@ img {
   background-color: black;
 }
 .navbar .menu {
-  display: flex;
+  display: inline-block;
+  position: relative;
   color: white;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-around;
 }
 .navbar .menu .fas {
@@ -191,12 +203,20 @@ img {
   transition: 1s;
 }
 .navbar .menu .menu-items {
-  display: flex;
-  flex-direction: row;
+  position: absolute;
+  z-index: 99;
+  display: block;
+  flex-direction: column;
   justify-content: space-around;
+  background-color: black;
+  min-width: 300px;
+  margin: 5rem 0 0 0;
 }
 .navbar .menu .menu-items .menu-link {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   display: flex;
+  justify-content: space-around;
   margin: 1rem;
   padding: 0 1rem;
   font-size: 2.5rem;
@@ -232,6 +252,35 @@ img {
 .navbar .user .far:hover {
   color: lightgrey;
   cursor: pointer;
+  transition: 1s;
+}
+.navbar .user .fas {
+  display: flex;
+  font-size: 3rem;
+  margin: 0.3rem;
+  padding: 0.5rem 2rem;
+}
+.navbar .user .fas:hover {
+  color: lightgrey;
+  cursor: pointer;
+  transition: 1s;
+}
+.navbar .user .user-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navbar .user .user-items .user-link {
+  display: flex;
+  margin: 1rem;
+  padding: 0 1rem;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: white;
+}
+.navbar .user .user-items .user-link:hover {
+  color: black;
+  background-color: white;
   transition: 1s;
 }
 .auth-cont {

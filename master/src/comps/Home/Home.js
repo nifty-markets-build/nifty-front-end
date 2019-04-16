@@ -6,6 +6,7 @@ import { getItems } from '../../actions';
 import Logo from '../../ast/NiftyMarkets.png';
 import ItemCard from '../Items/ItemCard';
 
+
 class Home extends React.Component {
 
   componentDidMount() {
@@ -35,7 +36,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.items,
+    items: state.shopReducer.items,
     isGettingItems: state.isGettingItems
   };
 };

@@ -15,16 +15,6 @@ class NavBar extends React.Component {
           text: 'Home',
           link: '/',
         },
-        {
-          id: 2,
-          text: 'Sign Up',
-          link: '/signup',
-        },
-        {
-          id: 3,
-          text: 'Log In',
-          link: '/login',
-        },
       ],
       userItems: [
         {
@@ -40,6 +30,7 @@ class NavBar extends React.Component {
       ]
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleUser = this.toggleUser.bind(this);
   }
 
   toggleMenu() {
@@ -48,8 +39,15 @@ class NavBar extends React.Component {
     }));
   } /*Function enables and disables dropdown on click*/
 
+  toggleUser() {
+    this.setState(prevState => ({
+      isUserOpen: !prevState.isUserOpen
+    }));
+  } /*Function enables and disables dropdown on click*/
+
   render() {
     const {isMenuOpen, menuItems} = this.state
+    const {isUserOpen, userItems} = this.state
     return (
       <div className='navbar'>
         <div className='menu'>
@@ -71,7 +69,16 @@ class NavBar extends React.Component {
         </div>
 
         <div className="user">
-          <i class="far fa-user"></i>
+        {isUserOpen && <div id='item-drop' className='user-items'>
+          {userItems.map((item) => (
+            <Link to={item.link} key={ item.id } className='user-link'>{ item.text }</Link>
+          ))}
+        </div>}
+
+        {isUserOpen
+          ? <i onClick={ this.toggleUser } className="fas fa-minus-square" />
+          : <i onClick={ this.toggleUser } className="far fa-user"></i>
+        }
         </div>
       </div>
     );

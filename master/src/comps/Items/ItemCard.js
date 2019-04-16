@@ -9,9 +9,12 @@ class ItemCard extends React.Component {
         </div>
 
         <div>
-          <h3>ID# {this.props.item.price} | {this.props.item.name}</h3>
-          <p>Age: {this.props.item.description}</p>
+          <h3>{this.props.item.name}</h3>
+          <p>{this.props.item.description}</p>
+          <h4>${this.props.item.price} | {this.props.item.user}</h4>
         </div>
+
+
       </div>
     )
   }
