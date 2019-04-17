@@ -321,6 +321,10 @@ img {
   color: ;
   background-color: ;
 }
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .home header {
   display: flex;
   width: 100%;
@@ -332,9 +336,49 @@ img {
   margin: 0 auto;
   height: 20rem;
 }
-.home body {
+.home div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.home div .ItemCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  background-color: #fffff4;
+  box-shadow: 0 0 10px #000000;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 24%;
+}
+.home div .ItemCard .img {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+.home div .ItemCard .info {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: center;
+}
+.home div .ItemCard .info h3 {
+  margin: 0.6rem auto;
+}
+.home div .ItemCard .info p {
+  margin: 0.6rem auto;
+}
+.home div .ItemCard .info h5 {
+  margin: 0.6rem auto;
+  font-size: 1.5rem;
+}
+.home div .ItemCard .info h5 span {
+  color: red;
+}
+.home div .ItemCard .info h5 span:hover {
+  color: grey;
+  cursor: pointer;
+  transition: 1s;
 }

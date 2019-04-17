@@ -15,6 +15,16 @@ class NavBar extends React.Component {
           text: 'Home',
           link: '/',
         },
+        {
+          id: 2,
+          text: 'My Profile',
+          link: '/profile/:id',
+        },
+        {
+          id: 3,
+          text: 'My Items',
+          link: '/Items/:id',
+        },
       ],
       userItems: [
         {

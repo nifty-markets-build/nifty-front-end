@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from './Auth/PrivateRoute.js';
 
 import '../design/css/index.css';
@@ -11,16 +11,23 @@ import Profile from './User/Profile.js';
 
 class App extends Component {
   render() {
+    const id = () => {
+      return(
+        localStorage.getItem('userId')
+      );
+
+    }
+
     return (
       <div className="App">
         <NavBar />
 
-        <switch>
+        <Switch>
           <Route exact path='/' component={ Home } />
           <Route path='/login' component={ LogIn } />
           <Route path='/signup' component={ SignUp } />
-          <PrivateRoute path='/myprofile/:id' component={ Profile } />
-        </switch>
+          <Route exact path={`/profile/${id}`} component={ Profile } />
+        </Switch>
       </div>
     );
   }

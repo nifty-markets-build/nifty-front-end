@@ -4,6 +4,7 @@ import PrivateRoute from '../Auth/PrivateRoute.js';
 import UserItem from './Routes/UserItem.js';
 
 class Profile extends React.Component {
+
   render() {
     return (
       <div>
@@ -12,7 +13,7 @@ class Profile extends React.Component {
         </div>
 
         <switch>
-          <PrivateRoute path='profile/:id/myitems/' component={ UserItem } />
+          <PrivateRoute path={`${this.props.match.path}`} component={ UserItem } />
         </switch>
       </div>
     )

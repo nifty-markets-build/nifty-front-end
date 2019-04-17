@@ -1,16 +1,18 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { getItems } from '../../actions';
 
 import Logo from '../../ast/NiftyMarkets.png';
 import ItemCard from '../Items/ItemCard';
-
+import SingleItem from '../Items/SingleItem';
 
 class Home extends React.Component {
 
   componentDidMount() {
     this.props.getItems();
+
   }
 
   render() {
@@ -24,11 +26,15 @@ class Home extends React.Component {
           </div>
         </header>
 
-        <body>
+        <div>
           {this.props.items.map(item => {
-            return <ItemCard key={item.name} item={item} />;
+            return <ItemCard item={item} key={item.id} />;
           })}
-        </body>
+        </div>
+
+        <Switch>
+        //  <Route path='/:itemId' component={SingleItem}/>
+        </Switch>
       </div>
     )
   }
