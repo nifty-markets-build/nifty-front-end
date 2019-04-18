@@ -1,0 +1,32 @@
+.home {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .header-img;
+
+  .actions {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+
+    .home-btn {
+      display: flex;
+      border: 2px solid @seco;
+      font-size: 2rem;
+      text-decoration: none;
+      color: white;
+      background-color: @prim;
+      padding: 1rem 4rem;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px @seco-7;
+
+      &:hover {
+        background-color: @prim-2;
+        box-shadow: 3px 3px 10px @seco-9;
+        transition: 1s;
+      }
+    }
+  }
+}

@@ -9,7 +9,10 @@ class SignUp extends Component {
     this.state = {
       credentials: {
         username: '',
-        password: ''
+        password: '',
+        firstName: '',
+        lastName: '',
+        email: '',
       }
     };
   }
@@ -37,7 +40,28 @@ class SignUp extends Component {
         <div className='auth-box'>
           <h2>Register Now!</h2>
           <hr className='hr' />
-          <form onSubmit={this.login}>
+          <form onSubmit={this.signup}>
+            <h3>First Name</h3>
+            <input
+              type='text'
+              name='firstName'
+              value={this.state.credentials.firstName}
+              onChange={this.handleLogin}
+            />
+            <h3>Last Name</h3>
+            <input
+              type='text'
+              name='lastName'
+              value={this.state.credentials.lastName}
+              onChange={this.handleLogin}
+            />
+            <h3>E-Mail</h3>
+            <input
+              type='text'
+              name='email'
+              value={this.state.credentials.email}
+              onChange={this.handleLogin}
+            />
             <h3>Username</h3>
             <input
               type='text'

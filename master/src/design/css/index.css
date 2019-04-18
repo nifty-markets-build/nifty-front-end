@@ -1,3 +1,15 @@
+.header-img header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.header-img header .logo {
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+}
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -170,9 +182,10 @@ img {
   background-color: black;
 }
 .navbar .menu {
-  display: flex;
+  display: inline-block;
+  position: relative;
   color: white;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-around;
 }
 .navbar .menu .fas {
@@ -182,17 +195,25 @@ img {
   padding: 0.5rem 2rem;
 }
 .navbar .menu .fas:hover {
-  color: lightgrey;
+  color: #c3332f;
   cursor: pointer;
   transition: 1s;
 }
 .navbar .menu .menu-items {
-  display: flex;
-  flex-direction: row;
+  position: absolute;
+  z-index: 99;
+  display: block;
+  flex-direction: column;
   justify-content: space-around;
+  background-color: black;
+  min-width: 300px;
+  margin: 5rem 0 0 0;
 }
 .navbar .menu .menu-items .menu-link {
+  border-top: 1px solid #c3332f;
+  border-bottom: 1px solid #c3332f;
   display: flex;
+  justify-content: space-around;
   margin: 1rem;
   padding: 0 1rem;
   font-size: 2.5rem;
@@ -200,8 +221,7 @@ img {
   color: white;
 }
 .navbar .menu .menu-items .menu-link:hover {
-  color: black;
-  background-color: white;
+  background-color: #711e1b;
   transition: 1s;
 }
 .navbar .logo {
@@ -212,6 +232,11 @@ img {
 }
 .navbar .logo img {
   height: 5rem;
+  border-radius: 10px;
+}
+.navbar .logo img:hover {
+  background-color: #711e1b;
+  transition: 1s;
 }
 .navbar .user {
   display: flex;
@@ -226,8 +251,36 @@ img {
   padding: 0.5rem 2rem;
 }
 .navbar .user .far:hover {
-  color: lightgrey;
+  color: #c3332f;
   cursor: pointer;
+  transition: 1s;
+}
+.navbar .user .fas {
+  display: flex;
+  font-size: 3rem;
+  margin: 0.3rem;
+  padding: 0.5rem 2rem;
+}
+.navbar .user .fas:hover {
+  color: #c3332f;
+  cursor: pointer;
+  transition: 1s;
+}
+.navbar .user .user-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navbar .user .user-items .user-link {
+  display: flex;
+  margin: 1rem;
+  padding: 0 1rem;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: white;
+}
+.navbar .user .user-items .user-link:hover {
+  background-color: #711e1b;
   transition: 1s;
 }
 .auth-cont {
@@ -265,4 +318,115 @@ img {
   font-size: 2rem;
   width: 75%;
   margin: 0 auto;
+  color: ;
+  background-color: ;
+}
+.home {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.home header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.home header .logo {
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+}
+.home .actions {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.home .actions .home-btn {
+  display: flex;
+  border: 2px solid black;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background-color: #c3332f;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000000;
+}
+.home .actions .home-btn:hover {
+  background-color: #711e1b;
+  box-shadow: 3px 3px 10px #000000;
+  transition: 1s;
+}
+.shop header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.shop header .logo {
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+}
+.shop .page-title {
+  margin: 1rem auto;
+  text-align: center;
+}
+.shop .shop-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.shop .shop-items .ItemCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  background-color: #fffff4;
+  box-shadow: 0 0 10px #000000;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 24%;
+}
+.shop .shop-items .ItemCard .img {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+.shop .shop-items .ItemCard .info {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: center;
+}
+.shop .shop-items .ItemCard .info h3 {
+  margin: 0.6rem auto;
+}
+.shop .shop-items .ItemCard .info p {
+  margin: 0.6rem auto;
+}
+.shop .shop-items .ItemCard .info h5 {
+  margin: 0.6rem auto;
+  font-size: 1.5rem;
+}
+.shop .shop-items .ItemCard .info h5 span {
+  color: red;
+}
+.shop .shop-items .ItemCard .info h5 span:hover {
+  color: grey;
+  cursor: pointer;
+  transition: 1s;
+}
+.profile {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile .head {
+  margin: 1rem auto;
 }

@@ -1,0 +1,64 @@
+.shop {
+  .header-img;
+
+  .page-title {
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  .shop-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .ItemCard {
+      display: flex;
+      flex-direction: column;
+      
+      border: 1px solid grey;
+      background-color: @card-bk;
+      box-shadow: 0 0 10px #000000;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 24%;
+
+      .img {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .info {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        text-align: center;
+
+        h3 {
+          margin: 0.6rem auto;
+        }
+
+        p {
+          margin: 0.6rem auto;
+        }
+
+        h5 {
+          margin: 0.6rem auto;
+          font-size: 1.5rem;
+
+          span {
+            color: red;
+
+            &:hover {
+              color: grey;
+              cursor: pointer;
+              transition: 1s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

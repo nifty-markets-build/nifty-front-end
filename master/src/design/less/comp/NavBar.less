@@ -2,12 +2,13 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background-color: black;
+  background-color: @seco;
 
   .menu {
-    display: flex;
+    display: inline-block;
+    position: relative;
     color: white;
-    flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: space-around;
 
     .fas {
@@ -17,19 +18,27 @@
       padding: 0.5rem 2rem;
 
       &:hover {
-        color: lightgrey;
+        color: @prim;
         cursor: pointer;
         transition: 1s
       }
     }
 
     .menu-items {
-      display: flex;
-      flex-direction: row;
+      position: absolute;
+      z-index: 99;
+      display: block;
+      flex-direction: column;
       justify-content: space-around;
+      background-color: @seco;
+      min-width: 300px;
+      margin: 5rem 0 0 0;
 
       .menu-link {
+        border-top: 1px solid @prim;
+        border-bottom: 1px solid @prim;
         display: flex;
+        justify-content: space-around;
         margin: 1rem;
         padding: 0 1rem;
         font-size: 2.5rem;
@@ -37,8 +46,7 @@
         color: white;
 
         &:hover {
-          color: black;
-          background-color: white;
+          background-color: @prim-2;
           transition: 1s;
         }
       }
@@ -53,6 +61,12 @@
 
     img {
       height: 5rem;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: @prim-2;
+        transition: 1s;
+      }
     }
   }
 
@@ -69,9 +83,42 @@
       padding: 0.5rem 2rem;
 
       &:hover {
-        color: lightgrey;
+        color: @prim;
         cursor: pointer;
         transition: 1s
+      }
+    }
+
+    .fas {
+      display: flex;
+      font-size: 3rem;
+      margin: 0.3rem;
+      padding: 0.5rem 2rem;
+
+      &:hover {
+        color: @prim;
+        cursor: pointer;
+        transition: 1s
+      }
+    }
+
+    .user-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .user-link {
+        display: flex;
+        margin: 1rem;
+        padding: 0 1rem;
+        font-size: 2.5rem;
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          background-color: @prim-2;
+          transition: 1s;
+        }
       }
     }
   }
