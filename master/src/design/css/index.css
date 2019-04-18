@@ -381,6 +381,8 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .shop .shop-items .ItemCard {
   display: flex;
@@ -391,6 +393,7 @@ img {
   padding: 1rem;
   border-radius: 10px;
   width: 24%;
+  margin: 0.3rem;
 }
 .shop .shop-items .ItemCard .img {
   display: flex;
@@ -422,11 +425,36 @@ img {
   cursor: pointer;
   transition: 1s;
 }
+.SingleItem {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.SingleItem .img-wrap {
+  display: flex;
+  width: 30%;
+}
+.SingleItem .info-wrap {
+  display: flex;
+  width: 60%;
+}
 .profile {
   display: flex;
+  flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
 }
 .profile .head {
   margin: 1rem auto;
+}
+.profile .user-actions nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.profile .user-actions nav .link {
+  text-decoration: none;
+  font-size: 2rem;
 }

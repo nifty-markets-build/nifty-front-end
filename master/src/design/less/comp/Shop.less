@@ -11,17 +11,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
 
     .ItemCard {
       display: flex;
       flex-direction: column;
-      
+
       border: 1px solid grey;
       background-color: @card-bk;
       box-shadow: 0 0 10px #000000;
       padding: 1rem;
       border-radius: 10px;
       width: 24%;
+      margin: 0.3rem;
 
       .img {
         display: flex;
@@ -60,5 +63,23 @@
         }
       }
     }
+  }
+}
+
+.SingleItem {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .img-wrap {
+    display: flex;
+    width: 30%
+  }
+
+  .info-wrap {
+    display: flex;
+    width: 60%;
   }
 }

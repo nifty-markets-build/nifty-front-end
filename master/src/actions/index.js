@@ -37,21 +37,6 @@ export const signup = creds => dispatch => {
 
 
 /* --- Shop Actions --- */
-export const ADD_ITEM_START = 'ADD_ITEM_START';
-export const ADD_ITEM_SUCCESS = 'ADD_ITEM_SUCCESS';
-export const ADD_ITEM_FAIL = 'ADD_ITEM_FAIL';
-export const addItem = () => dispatch => {
-dispatch({ type: ADD_ITEM_START });
-axios
-  .post('', {headers: {authorization: localStorage.getItem('token')}})
-  .then(res => {
-    dispatch({ type: ADD_ITEM_SUCCESS, payload: res.data });
-  })
-  .catch(err => {
-    dispatch({ type: ADD_ITEM_FAIL, payload: err })
-  })
-}//Add a single shop item
-
 export const GET_ITEMS_START = 'GET_ITEMS_START';
 export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS';
 export const GET_ITEMS_FAIL = 'GET_ITEMS_FAIL';
@@ -73,7 +58,7 @@ export const GET_THIS_ITEM_FAIL = 'GET_THIS_ITEM_FAIL';
 export const getThisItem = (itemId) => dispatch => {
   dispatch({ type: GET_THIS_ITEM_START });
   axios
-    .get(`https://niftymarket.herokuapp.com/items/${itemId}`, itemId)
+    .get(`https://niftymarket.herokuapp.com/items/item/${itemId}`, itemId)
     .then(res => {
       dispatch({ type: GET_THIS_ITEM_SUCCESS, payload: res.data });
     })
@@ -82,7 +67,23 @@ export const getThisItem = (itemId) => dispatch => {
     })
 }//Get a single shop item
 
+
 /* --- User Actions --- */
+export const ADD_NEW_ITEM_START = 'ADD_NEW_ITEM_START';
+export const ADD_NEW_ITEM_SUCCESS = 'ADD_NEW_ITEM_SUCCESS';
+export const ADD_NEW_ITEM_FAIL = 'ADD_NEW_ITEM_FAIL';
+export const addItem = (newItem, userId) => dispatch => {
+  dispatch({ type: ADD_NEW_ITEM_START });
+  axiosAuth()
+    .post(`https://niftymarket.herokuapp.com/items/${userId}`, newItem)
+    .then(res => {
+      dispatch({ type: ADD_NEW_ITEM_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: ADD_NEW_ITEM_FAIL, payload: err });
+    })
+}//Post a new item
+
 export const GET_USER_START = 'GET_USER_START';
 export const GET_USER_SUCCESS = 'GET_USER_SUCCESS';
 export const GET_USER_FAIL = 'GET_USER_FAIL';
@@ -97,3 +98,48 @@ export const getUser = (userId) => dispatch => {
       dispatch({ type: GET_USER_FAIL, payload: err });
     })
 }//Get a single user
+
+export const GET_USER_ITEMS_START = 'GET_USER_ITEMS_START';
+export const GET_USER_ITEMS_SUCCESS = 'GET_USER_ITEMS_SUCCESS';
+export const GET_USER_ITEMS_FAIL = 'GET_USER_ITEMS_FAIL';
+export const getUserItems = (userId) => dispatch => {
+  dispatch({ type: GET_THIS_ITEM_START });
+  axiosAuth()
+    .get(`https://niftymarket.herokuapp.com/items/${userId}`, userId)
+    .then(res => {
+      dispatch({ type: GET_THIS_ITEM_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: GET_USER_ITEMS_FAIL, payload: err });
+    })
+}//Get all items from a single user
+
+export const UPDATE_USER_LIST_START = 'UPDATE_USER_LIST_START';
+export const UPDATE_USER_LIST_SUCCESS = 'UPDATE_USER_LIST_SUCCESS';
+export const UPDATE_USER_LIST_FAIL = 'UPDATE_USER_LIST_FAIL';
+export const updateUserList = (userId, itemId) => dispatch => {
+  dispatch({ type: UPDATE_USER_LIST_START });
+  axiosAuth()
+    .put(`https://niftymarket.herokuapp.com/items/${userId}/${itemId}`, userId, itemId)
+    .then(res => {
+      dispatch({ type: UPDATE_USER_LIST_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: UPDATE_USER_LIST_FAIL, payload: err });
+    })
+}//Update selected item
+
+export const DELETE_USER_LIST_START = 'DELETE_USER_LIST_START';
+export const DELETE_USER_LIST_SUCCESS = 'DELETE_USER_LIST_SUCCESS';
+export const DELETE_USER_LIST_FAIL = 'DELETE_USER_LIST_FAIL';
+export const deleteUserList = (userId, itemId) => dispatch => {
+  dispatch({ type: DELETE_USER_LIST_START });
+  axiosAuth()
+    .delete(`https://niftymarket.herokuapp.com/items/${userId}/${itemId}`, userId, itemId)
+    .then(res => {
+      dispatch({ type: DELETE_USER_LIST_SUCCESS, payload: res.data});
+    })
+    .catch(err => {
+      dispatch({ type: DELETE_USER_LIST_FAIL, payload: err });
+    })
+}//Delete selected item
