@@ -1,9 +1,6 @@
-@prim- 1: darken(black, 10&);
-@seco- 1: darken(blue, 10&);
-@prim- 2: darken(black, 20&);
-@seco- 2: darken(blue, 20&);
 .header-img header {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -198,7 +195,7 @@ img {
   padding: 0.5rem 2rem;
 }
 .navbar .menu .fas:hover {
-  color: lightgrey;
+  color: #c3332f;
   cursor: pointer;
   transition: 1s;
 }
@@ -213,8 +210,8 @@ img {
   margin: 5rem 0 0 0;
 }
 .navbar .menu .menu-items .menu-link {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid #c3332f;
+  border-bottom: 1px solid #c3332f;
   display: flex;
   justify-content: space-around;
   margin: 1rem;
@@ -224,8 +221,7 @@ img {
   color: white;
 }
 .navbar .menu .menu-items .menu-link:hover {
-  color: black;
-  background-color: white;
+  background-color: #711e1b;
   transition: 1s;
 }
 .navbar .logo {
@@ -236,6 +232,11 @@ img {
 }
 .navbar .logo img {
   height: 5rem;
+  border-radius: 10px;
+}
+.navbar .logo img:hover {
+  background-color: #711e1b;
+  transition: 1s;
 }
 .navbar .user {
   display: flex;
@@ -250,7 +251,7 @@ img {
   padding: 0.5rem 2rem;
 }
 .navbar .user .far:hover {
-  color: lightgrey;
+  color: #c3332f;
   cursor: pointer;
   transition: 1s;
 }
@@ -261,7 +262,7 @@ img {
   padding: 0.5rem 2rem;
 }
 .navbar .user .fas:hover {
-  color: lightgrey;
+  color: #c3332f;
   cursor: pointer;
   transition: 1s;
 }
@@ -279,8 +280,7 @@ img {
   color: white;
 }
 .navbar .user .user-items .user-link:hover {
-  color: black;
-  background-color: white;
+  background-color: #711e1b;
   transition: 1s;
 }
 .auth-cont {
@@ -322,11 +322,13 @@ img {
   background-color: ;
 }
 .home {
+  display: flex;
   max-width: 800px;
   margin: 0 auto;
 }
 .home header {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -336,8 +338,31 @@ img {
   margin: 0 auto;
   height: 20rem;
 }
+.home .actions {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.home .actions .home-btn {
+  display: flex;
+  border: 2px solid black;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background-color: #c3332f;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000000;
+}
+.home .actions .home-btn:hover {
+  background-color: #711e1b;
+  box-shadow: 3px 3px 10px #000000;
+  transition: 1s;
+}
 .shop header {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -396,4 +421,12 @@ img {
   color: grey;
   cursor: pointer;
   transition: 1s;
+}
+.profile {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile .head {
+  margin: 1rem auto;
 }

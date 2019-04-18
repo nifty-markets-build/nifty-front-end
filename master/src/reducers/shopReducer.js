@@ -12,9 +12,7 @@ import {
 
 const initialState = {
   items: [],
-  thisItem: {
-
-  },
+  thisItem: {},
   isAddingItem: false,
   isGettingItems: false,
   isGettingThisItem: false,

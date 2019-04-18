@@ -1,4 +1,5 @@
 import axios from 'axios';
+import axiosAuth from './axiosAuth.js';
 
 
 /* --- Auth Actions --- */
@@ -82,3 +83,17 @@ export const getThisItem = (itemId) => dispatch => {
 }//Get a single shop item
 
 /* --- User Actions --- */
+export const GET_USER_START = 'GET_USER_START';
+export const GET_USER_SUCCESS = 'GET_USER_SUCCESS';
+export const GET_USER_FAIL = 'GET_USER_FAIL';
+export const getUser = (userId) => dispatch => {
+  dispatch({ type: GET_USER_START });
+  axiosAuth()
+    .get(`https://niftymarket.herokuapp.com/users/${userId}`, userId)
+    .then(res => {
+      dispatch({ type: GET_USER_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: GET_USER_FAIL, payload: err });
+    })
+}//Get a single user

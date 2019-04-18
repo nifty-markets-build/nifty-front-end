@@ -1,22 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import Logo from '../../ast/NiftyMarkets.png';
+import GuestHome from './GuestHome';
+import UserHome from './UserHome';
 
 
 class Home extends React.Component {
+  componentDidMount() {
+    this.forceUpdate();
+  }
+  
   render() {
-    return (
-      <div className='home'>
-        <header>
-          <img src={ Logo } className='logo' alt='Nifty Markets logo' />
-
-          <div className='actions'>
-            <Link to='/shop'>Shop Now!</Link>
-          </div>
-        </header>
-      </div>
-    )
+    if (localStorage.token) {
+      return (
+        <div>
+          <UserHome />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <GuestHome />
+        </div>
+      )
+    }
   }
 }
 
