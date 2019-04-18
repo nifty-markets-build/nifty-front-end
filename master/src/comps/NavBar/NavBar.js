@@ -22,8 +22,8 @@ class NavBar extends React.Component {
         },
         {
           id: 3,
-          text: 'My Items',
-          link: '/Items/:id',
+          text: 'Marketplace',
+          link: '/shop',
         },
       ],
       userItems: [

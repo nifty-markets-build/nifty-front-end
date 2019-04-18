@@ -7,17 +7,12 @@ import NavBar from './NavBar/NavBar.js';
 import Home from './Home/Home.js';
 import LogIn from './Auth/LogIn/LogIn.js';
 import SignUp from './Auth/SignUp/SignUp.js';
+import Shop from './Shop/Shop.js';
+import SingleItem from './Shop/Items/SingleItem.js';
 import Profile from './User/Profile.js';
 
 class App extends Component {
   render() {
-    const id = () => {
-      return(
-        localStorage.getItem('userId')
-      );
-
-    }
-
     return (
       <div className="App">
         <NavBar />
@@ -26,7 +21,9 @@ class App extends Component {
           <Route exact path='/' component={ Home } />
           <Route path='/login' component={ LogIn } />
           <Route path='/signup' component={ SignUp } />
-          <Route exact path={`/profile/${id}`} component={ Profile } />
+          <Route exact path='/shop' component={ Shop } />
+          <Route path='/shop/:itemId' component={ SingleItem } />
+          <PrivateRoute exact path='/profile/:userId' component={ Profile } />
         </Switch>
       </div>
     );

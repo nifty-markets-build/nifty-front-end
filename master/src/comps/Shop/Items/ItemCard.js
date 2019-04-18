@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ItemCard extends React.Component {
+
+
   render() {
     return (
       <div className='ItemCard'>
@@ -9,8 +12,10 @@ class ItemCard extends React.Component {
         </div>
 
         <div className='info'>
-          <h3>{this.props.item.name}</h3>
-          <p>{this.props.item.description}</p>
+          <Link to={`shop/${this.props.item.itemId}`}>
+            <h3>{this.props.item.name}</h3>
+          </Link>
+
           <h5>${this.props.item.cost} | <span>{this.props.item.gameName}</span></h5>
         </div>
 

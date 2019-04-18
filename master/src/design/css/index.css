@@ -336,13 +336,28 @@ img {
   margin: 0 auto;
   height: 20rem;
 }
-.home div {
+.shop header {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.shop header .logo {
+  display: flex;
+  margin: 0 auto;
+  height: 20rem;
+}
+.shop .page-title {
+  margin: 1rem auto;
+  text-align: center;
+}
+.shop .shop-items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.home div .ItemCard {
+.shop .shop-items .ItemCard {
   display: flex;
   flex-direction: column;
   border: 1px solid grey;
@@ -352,32 +367,32 @@ img {
   border-radius: 10px;
   width: 24%;
 }
-.home div .ItemCard .img {
+.shop .shop-items .ItemCard .img {
   display: flex;
   width: 100%;
   margin: 0 auto;
 }
-.home div .ItemCard .info {
+.shop .shop-items .ItemCard .info {
   display: flex;
   width: 100%;
   margin: 0 auto;
   flex-direction: column;
   text-align: center;
 }
-.home div .ItemCard .info h3 {
+.shop .shop-items .ItemCard .info h3 {
   margin: 0.6rem auto;
 }
-.home div .ItemCard .info p {
+.shop .shop-items .ItemCard .info p {
   margin: 0.6rem auto;
 }
-.home div .ItemCard .info h5 {
+.shop .shop-items .ItemCard .info h5 {
   margin: 0.6rem auto;
   font-size: 1.5rem;
 }
-.home div .ItemCard .info h5 span {
+.shop .shop-items .ItemCard .info h5 span {
   color: red;
 }
-.home div .ItemCard .info h5 span:hover {
+.shop .shop-items .ItemCard .info h5 span:hover {
   color: grey;
   cursor: pointer;
   transition: 1s;

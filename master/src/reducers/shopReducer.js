@@ -5,12 +5,19 @@ import {
   GET_ITEMS_START,
   GET_ITEMS_SUCCESS,
   GET_ITEMS_FAIL,
+  GET_THIS_ITEM_START,
+  GET_THIS_ITEM_SUCCESS,
+  GET_THIS_ITEM_FAIL,
 } from '../actions';
 
 const initialState = {
   items: [],
+  thisItem: {
+
+  },
   isAddingItem: false,
   isGettingItems: false,
+  isGettingThisItem: false,
   err: null
 }
 
@@ -47,6 +54,23 @@ export const shopReducer = (state = initialState, action) => {
       return {
         ...state,
         isGettingItems: false,
+        err: action.payload
+      };
+    case GET_THIS_ITEM_START:
+      return {
+        ...state,
+        isGettingThisItem: true
+      };
+    case GET_THIS_ITEM_SUCCESS:
+      return {
+        ...state,
+        isGettingThisItem: false,
+        thisItem: action.payload
+      };
+    case GET_THIS_ITEM_FAIL:
+      return {
+        ...state,
+        isGettingThisItem: false,
         err: action.payload
       };
     default:

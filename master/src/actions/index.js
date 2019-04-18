@@ -49,7 +49,7 @@ axios
   .catch(err => {
     dispatch({ type: ADD_ITEM_FAIL, payload: err })
   })
-}
+}//Add a single shop item
 
 export const GET_ITEMS_START = 'GET_ITEMS_START';
 export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS';
@@ -64,4 +64,21 @@ export const getItems = () => dispatch => {
     .catch(err => {
       dispatch({ type: GET_ITEMS_FAIL, payload: err })
     })
-}
+}//Get all shop items
+
+export const GET_THIS_ITEM_START = 'GET_THIS_ITEM_START';
+export const GET_THIS_ITEM_SUCCESS = 'GET_THIS_ITEM_SUCCESS';
+export const GET_THIS_ITEM_FAIL = 'GET_THIS_ITEM_FAIL';
+export const getThisItem = (itemId) => dispatch => {
+  dispatch({ type: GET_THIS_ITEM_START });
+  axios
+    .get(`https://niftymarket.herokuapp.com/items/${itemId}`, itemId)
+    .then(res => {
+      dispatch({ type: GET_THIS_ITEM_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: GET_THIS_ITEM_FAIL, payload: err })
+    })
+}//Get a single shop item
+
+/* --- User Actions --- */
