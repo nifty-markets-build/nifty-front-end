@@ -39,7 +39,8 @@ class UserItemCard extends React.Component {
     });
   };
 
-  deleteList = (itemId) => {
+  deleteList = () => {
+    const itemId = this.props.item.itemId;
     const userId = localStorage.getItem('userId');
     this.props.deleteUserList(userId, itemId)
   }

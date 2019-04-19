@@ -23,7 +23,7 @@ class App extends Component {
           <Route path='/signup' component={ SignUp } />
           <Route exact path='/shop' component={ Shop } />
           <Route path='/shop/:itemId' component={ SingleItem } />
-          <PrivateRoute exact path='/profile/:userId' component={ Profile } />
+          <PrivateRoute path='/profile/:userId' component={ Profile } />
         </Switch>
       </div>
     );

@@ -67,11 +67,11 @@ class Profile extends React.Component {
           </div>
 
           <div className='info'>
-          <h3> My Info </h3>
-          <p><span>First Name: </span>{this.props.user.firstName}</p>
-          <p><span>Last Name: </span>{this.props.user.lastName}</p>
-          <p><span>Username: </span>{this.props.user.username}</p>
-          <p><span>E-Mail: </span>{this.props.user.email}</p>
+            <h3> My Info </h3>
+            <p><span>First Name: </span>{this.props.user.firstName}</p>
+            <p><span>Last Name: </span>{this.props.user.lastName}</p>
+            <p><span>Username: </span>{this.props.user.username}</p>
+            <p><span>E-Mail: </span>{this.props.user.email}</p>
           </div>
         </div>
 
