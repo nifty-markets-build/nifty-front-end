@@ -20,6 +20,8 @@ class SingleItem extends React.Component {
 
         <div className='info-wrap'>
           <h3>{this.props.thisItem.name}</h3>
+          <br />
+          <h5>Item Description:</h5>
           <p>{this.props.thisItem.description}</p>
           <h5>${this.props.thisItem.cost} | <span>{this.props.thisItem.gameName}</span></h5>
         </div>
