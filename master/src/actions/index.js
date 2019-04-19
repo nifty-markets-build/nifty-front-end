@@ -103,11 +103,11 @@ export const GET_USER_ITEMS_START = 'GET_USER_ITEMS_START';
 export const GET_USER_ITEMS_SUCCESS = 'GET_USER_ITEMS_SUCCESS';
 export const GET_USER_ITEMS_FAIL = 'GET_USER_ITEMS_FAIL';
 export const getUserItems = (userId) => dispatch => {
-  dispatch({ type: GET_THIS_ITEM_START });
+  dispatch({ type: GET_USER_ITEMS_START });
   axiosAuth()
     .get(`https://niftymarket.herokuapp.com/items/${userId}`, userId)
     .then(res => {
-      dispatch({ type: GET_THIS_ITEM_SUCCESS, payload: res.data });
+      dispatch({ type: GET_USER_ITEMS_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: GET_USER_ITEMS_FAIL, payload: err });
@@ -117,10 +117,10 @@ export const getUserItems = (userId) => dispatch => {
 export const UPDATE_USER_LIST_START = 'UPDATE_USER_LIST_START';
 export const UPDATE_USER_LIST_SUCCESS = 'UPDATE_USER_LIST_SUCCESS';
 export const UPDATE_USER_LIST_FAIL = 'UPDATE_USER_LIST_FAIL';
-export const updateUserList = (userId, itemId) => dispatch => {
+export const updateUserList = (newList, userId, itemId) => dispatch => {
   dispatch({ type: UPDATE_USER_LIST_START });
   axiosAuth()
-    .put(`https://niftymarket.herokuapp.com/items/${userId}/${itemId}`, userId, itemId)
+    .put(`https://niftymarket.herokuapp.com/items/${userId}/${itemId}`, newList)
     .then(res => {
       dispatch({ type: UPDATE_USER_LIST_SUCCESS, payload: res.data });
     })

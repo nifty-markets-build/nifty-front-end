@@ -26,7 +26,7 @@ class Profile extends React.Component {
   componentDidMount() {
     const userId = this.props.match.params.userId;
     this.props.getUser(userId);
-    console.log(this.props.getUserItems(userId))
+    this.props.getUserItems(userId)
   };
 
   handleChange = e => {
@@ -62,11 +62,12 @@ class Profile extends React.Component {
         </div>
 
         <div className='user-info'>
-          <div>
+          <div className='img'>
             <img src={this.props.user.img} alt={this.props.user.firstName} />
           </div>
 
-          <div>
+          <div className='info'>
+          <h3> My Info </h3>
           <p><span>First Name: </span>{this.props.user.firstName}</p>
           <p><span>Last Name: </span>{this.props.user.lastName}</p>
           <p><span>Username: </span>{this.props.user.username}</p>
@@ -77,9 +78,9 @@ class Profile extends React.Component {
         <div className='user-tabs'>
           <Tabs>
             <TabList>
-              <Tab>My Items</Tab>
-              <Tab>New Item</Tab>
-              <Tab>My Transactions</Tab>
+              <Tab><span className='span'>My Items</span></Tab>
+              <Tab><span className='span'>New Item</span></Tab>
+              <Tab><span className='span'>My Transactions</span></Tab>
             </TabList>
 
             <TabPanel>
@@ -165,9 +166,9 @@ const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
     userItems: state.userReducer.userItems,
-    isGettingUser: state.isGettingUser,
-    isGettingUserItems: state.isGettingUserItems,
-    isAddingItem: state.isAddingItem
+    isGettingUser: state.userReducer.isGettingUser,
+    isGettingUserItems: state.userReducer.isGettingUserItems,
+    isAddingItem: state.userReducer.isAddingItem
   };
 };
 

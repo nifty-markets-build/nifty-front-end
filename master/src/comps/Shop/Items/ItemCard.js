@@ -7,12 +7,12 @@ class ItemCard extends React.Component {
   render() {
     return (
       <div className='ItemCard'>
-        <div>
-          <img src={this.props.item.img} alt={this.props.item.name} className='img' />
+        <div className='img-box'>
+          <img src={this.props.item.img} alt={this.props.item.name} className='img-stuff' />
         </div>
 
         <div className='info'>
-          <Link to={`shop/${this.props.item.itemId}`}>
+          <Link className='link' to={`shop/${this.props.item.itemId}`}>
             <h3>{this.props.item.name}</h3>
           </Link>
 
